@@ -242,9 +242,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/U8glib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/config/COMPOSER_A4_T}&quot;"/>
@@ -260,9 +257,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/U8glib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/config/COMPOSER_A4_T}&quot;"/>
@@ -278,9 +272,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/core/variant}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/SPI/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/LiquidCrystal/src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/U8glib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/libraries/Wire/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/MKA/config/COMPOSER_A4_T}&quot;"/>

@@ -206,6 +206,7 @@ typedef int8_t    pin_t;
 
 // Feature modules
 #include "src/feature/probe/probe.h"
+#include "src/feature/calprobe/calprobe.h"
 #include "src/feature/bedlevel/bedlevel.h"
 #include "src/feature/external_dac/external_dac.h"
 #include "src/feature/tmc/tmc.h"

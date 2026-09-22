@@ -142,7 +142,11 @@
 #define X2_MAX_PIN          NoPin
 #define Y2_MAX_PIN          NoPin
 #define Z2_MAX_PIN          NoPin
-#define Z_PROBE_PIN         NoPin
+#if ENABLED(CALIBRATION_PROBE)
+  #define Z_PROBE_PIN       ORIG_Z_MIN_PIN  // Nozzle calibration probe on the Z_MIN connector
+#else
+  #define Z_PROBE_PIN       NoPin
+#endif
 
 // HEATER pin
 #define HEATER_0_PIN        ORIG_HEATER_0_PIN

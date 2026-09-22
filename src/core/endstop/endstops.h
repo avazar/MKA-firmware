@@ -97,6 +97,10 @@ class Endstops {
                     current_bits,
                     old_bits;
 
+    #if HAS_CALIBRATION_PROBE
+      static volatile int8_t calibration_probe_axis;  // Axis stopped when the calibration probe triggers, -1 = probe not checked
+    #endif
+
   private: /** Private Parameters */
 
     static uint8_t  flag1_bits;
@@ -178,6 +182,12 @@ class Endstops {
     }
     FORCE_INLINE static bool isG38EndstopHit() { return TEST(flag1_bits, flag1_g38_endstop_hit); }
 
+    #if HAS_CALIBRATION_PROBE
+      // Check the calibration probe during the next moves and stop the given axis on trigger, NO_AXIS to stop checking
+      FORCE_INLINE static void setCalibrationProbe(const AxisEnum axis) { calibration_probe_axis = axis; }
+      FORCE_INLINE static bool isCalibrationProbe() { return calibration_probe_axis >= 0; }
+    #endif
+
     // Disable-Enable endstops based on ENSTOPS_ONLY_FOR_HOMING and global enable
     FORCE_INLINE static void setNotHoming() { setEnabled(isGlobally()); }
 
@@ -203,6 +213,8 @@ extern Endstops endstops;
 
 #if HAS_BED_PROBE
   #define ENDSTOPS_ENABLED  (endstops.isEnabled() || endstops.isProbeEndstop())
+#elif HAS_CALIBRATION_PROBE
+  #define ENDSTOPS_ENABLED  (endstops.isEnabled() || endstops.isCalibrationProbe())
 #else
   #define ENDSTOPS_ENABLED  endstops.isEnabled()
 #endif

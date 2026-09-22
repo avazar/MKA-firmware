@@ -123,5 +123,8 @@ Codes marked with * are specific for Composer MKA firmware (of their meaning dif
 | M1016* | - | Send command to network bridge
 | M1017* | - | S[0/1] Set job awaiting flag  
 | M1018* | - | Clear AC dir in internal SD storage 
+| M1020* | - | Calibration probe state, located probe position and settings. R - forget the probe position. Settings until restart: D[mm] side touches start distance, L[mm] side touches height below the probe top, H[mm] travel height above the probe top, S[count] touches per side, T[mm] touches tolerance, F[mm/min] precise touches speed
+| M1021* | - | Single calibration probe move X[mm] or Y[mm] or Z[mm] (relative) until the probe triggers, reports the contact position. F[mm/min] - speed
+| M1022* | - | Locate the calibration probe with the active nozzle, starting above the located probe position or from the current position (nozzle 2-3 mm above the probe). V[0-2] - verbosity
 
 

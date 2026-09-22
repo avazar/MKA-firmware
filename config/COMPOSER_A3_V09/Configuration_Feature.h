@@ -48,6 +48,7 @@
  * - Endstops only for homing
  * - Abort on endstop hit feature
  * - G38.2 and G38.3 Probe Target
+ * - Nozzle calibration probe
  * - R/C Servo
  * - Late Z axis
  * - Ahead slowdown
@@ -584,6 +585,40 @@
 // minimum distance in mm that will produce a move
 // (determined using the print statement in check_move)
 #define G38_MINIMUM_MOVE 0.0275
+/**************************************************************************/
+
+
+/**************************************************************************
+ ********************** Nozzle calibration probe **************************
+ **************************************************************************
+ *                                                                        *
+ * XYZ nozzle offset calibration probe (Mellow MultiHead Zero, Nudge,     *
+ * Sexball probe...): a ball or a pin on a micro switch that triggers     *
+ * when a nozzle pushes it from any side or from above.                   *
+ * The probe is mounted on the bed and connected to the Z_MIN connector   *
+ * (Z_PROBE_PIN in Configuration_Pins.h). For a normally closed switch    *
+ * use Z_PROBE_ENDSTOP_LOGIC false and ENDSTOPPULLUP_ZPROBE true          *
+ * (can be changed with M123 P and M124 P).                               *
+ *                                                                        *
+ * M1020 - Probe state and settings                                       *
+ * M1021 - Single probing move                                            *
+ * M1022 - Locate the probe center with the active nozzle                 *
+ *                                                                        *
+ **************************************************************************/
+#define CALIBRATION_PROBE
+
+#define CALIBRATION_PROBE_SPREAD          10.0  // (mm) Side touches start this far from the probe center (more than probe radius + nozzle tip radius + start position error)
+#define CALIBRATION_PROBE_LOWER_Z         1.0   // (mm) Height of the side touches below the probe top
+#define CALIBRATION_PROBE_LIFT_Z          3.0   // (mm) Travel height above the probe top when moving around the probe
+#define CALIBRATION_PROBE_SEARCH_Z        5.0   // (mm) Max travel down when searching the probe top below the nozzle
+#define CALIBRATION_PROBE_FINAL_LIFT_Z    5.0   // (mm) Height above the probe top after locating
+#define CALIBRATION_PROBE_RETRACT         0.5   // (mm) Move back after a touch to release the switch
+#define CALIBRATION_PROBE_SAMPLES         3     // Touches per side in the precise pass
+#define CALIBRATION_PROBE_TOLERANCE       0.03  // (mm) Max difference between the touches of one side
+#define CALIBRATION_PROBE_FEEDRATE_FAST   3.0   // (mm/s) Speed of the first touch of each side
+#define CALIBRATION_PROBE_FEEDRATE_SLOW   1.0   // (mm/s) Speed of the precise touches
+#define CALIBRATION_PROBE_FEEDRATE_TRAVEL 20.0  // (mm/s) XY moves around the probe
+#define CALIBRATION_PROBE_FEEDRATE_Z      5.0   // (mm/s) Z moves around the probe
 /**************************************************************************/
 
 

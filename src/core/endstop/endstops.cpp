@@ -59,6 +59,10 @@ volatile char Endstops::hit_bits; // use X_MIN, Y_MIN, Z_MIN and Z_MIN_PROBE as 
 volatile uint8_t Endstops::e_hit = 0; // Different from 0 when the endstops shall be tested in detail.
                                       // Must be reset to 0 by the test function when the tests are finished.
 
+#if HAS_CALIBRATION_PROBE
+  volatile int8_t Endstops::calibration_probe_axis = NO_AXIS;
+#endif
+
 uint16_t  Endstops::logic_bits    = 0,
           Endstops::pullup_bits   = 0,
           Endstops::current_bits  = 0,
@@ -585,6 +589,18 @@ void Endstops::update() {
         else if (stepper.current_block->steps[Y_AXIS] > 0) { _ENDSTOP_HIT(Y, MIN); stepper.endstop_triggered(Y_AXIS); }
         else if (stepper.current_block->steps[Z_AXIS] > 0) { _ENDSTOP_HIT(Z, MIN); stepper.endstop_triggered(Z_AXIS); }
         setG38EndstopHit(true);
+      }
+    }
+  #endif
+
+  #if HAS_CALIBRATION_PROBE
+    // Nozzle calibration probe: stop the whole move in any direction when the probe triggers.
+    // The axis is given by the caller (no motor steps test), so it works for CoreXY too.
+    if (calibration_probe_axis >= 0 && stepper.current_block) {
+      UPDATE_ENDSTOP_BIT(Z, PROBE);
+      if (TEST_ENDSTOP(Z_PROBE)) {
+        _ENDSTOP_HIT(Z, PROBE);
+        stepper.endstop_triggered((AxisEnum)calibration_probe_axis);
       }
     }
   #endif

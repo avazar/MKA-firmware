@@ -235,6 +235,7 @@
 #include "composer/m1012.h"
 #include "composer/m1013.h"
 #include "composer/m1014_m1019.h"
+#include "composer/m1020_m1022.h" // Nozzle calibration probe
 #include "composer/m704.h"
 #include "composer/m217.h"
 #include "composer/m990.h"
